@@ -1,10 +1,12 @@
 import React from 'react'
 
+import { DELETE_EVENT } from '../actions'
+
 const Event = ({ dispatch, event }) => {
   const id = event.id
   const hundleClickDeleteButton = () =>{
     const result = window.confirm(`イベント (id = ${id}) を削除してもよろしいですか？`)
-      if(result) dispatch({type: 'DELETE_EVENT', id: id})
+      if(result) dispatch({type: DELETE_EVENT, id: id})
   }
   return (
   <tr>
